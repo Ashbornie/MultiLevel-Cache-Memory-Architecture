@@ -35,23 +35,21 @@ It is designed for easy configuration, reproducibility, and modularity—even fo
 
 - [2. Images](#2-images)
 
-- [3. Prerequisites](#3-prerequisites)
+- [3. Vivado Installation (Step-by-Step)](#3-vivado-installation-step-by-step)
 
-- [4. Vivado Installation (Step-by-Step)](#4-vivado-installation-step-by-step)
+- [4. Python Environment Setup](#4-python-environment-setup)
 
-- [5. Python Environment Setup](#5-python-environment-setup)
+- [5. Vivado Project Setup](#5-vivado-project-setup)
 
-- [6. Vivado Project Setup](#6-vivado-project-setup)
+- [6. Configuration](#6-configuration)
 
-- [7. Configuration](#7-configuration)
+- [7. Running the GUI Frontend](#7-running-the-gui-frontend)
 
-- [8. Running the GUI Frontend](#8-running-the-gui-frontend)
+- [8. Troubleshooting](#8-troubleshooting)
 
-- [9. Troubleshooting](#9-troubleshooting)
+- [9. Reference Links](#9-reference-links)
 
-- [10. Reference Links](#10-reference-links)
-
-
+- [10. License](#10-license)
 
 ---
 
@@ -142,29 +140,12 @@ project_root/
 
 ---
 
-## 3. Prerequisites
+
+## 3. Vivado Installation (Step-by-Step)
 
 
 
-- **Windows PC** with admin rights
-
-- **At least 32 GB free disk space**
-
-- **Python 3.8+** (64-bit recommended)
-
-- **Internet connection** (for Vivado and Python package downloads)
-
-
-
----
-
-
-
-## 4. Vivado Installation (Step-by-Step)
-
-
-
-### 4.1 Download Vivado
+### 3.1 Download Vivado
 
 
 
@@ -176,7 +157,7 @@ project_root/
 
 
 
-### 4.2 Create a Xilinx Account
+### 3.2 Create a Xilinx Account
 
 
 
@@ -186,7 +167,7 @@ project_root/
 
 
 
-### 4.3 Run the Installer
+### 3.3 Run the Installer
 
 
 
@@ -210,7 +191,7 @@ project_root/
 
 
 
-### 4.4 Activate Your License
+### 3.4 Activate Your License
 
 
 
@@ -222,7 +203,7 @@ project_root/
 
 
 
-### 4.5 (Optional) Install Board Support Files
+### 3.5 (Optional) Install Board Support Files
 
 
 
@@ -236,7 +217,7 @@ project_root/
 
 
 
-## 5. Python Environment Setup
+## 4. Python Environment Setup
 
 
 
@@ -280,7 +261,7 @@ project_root/
 
 
 
-## 6. Vivado Project Setup
+## 5. Vivado Project Setup
 
 
 
@@ -320,7 +301,7 @@ project_root/
 
 
 
-## 7. Configuration
+## 6. Configuration
 
 
 
@@ -345,7 +326,7 @@ project_root/
 
 
 
-## 8. Running the GUI Frontend
+## 7. Running the GUI Frontend
 
 
 
@@ -389,7 +370,7 @@ project_root/
 
 
 
-## 9. Troubleshooting
+## 8. Troubleshooting
 
 
 
@@ -423,7 +404,7 @@ project_root/
 
 
 
-## 10. Reference Links
+## 9. Reference Links
 
 
 
@@ -442,7 +423,7 @@ project_root/
 ---
 
 
-### **License**
+## 10. License
 
 [GNU General Public License v3.0](LICENSE)
 
