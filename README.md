@@ -6,9 +6,22 @@ This project provides a **GUI-based frontend** for simulating, analyzing, and vi
 
 It is designed for easy configuration, reproducibility, and modularity—even for users new to Vivado.
 
-| ![Direct Mapped](images/DM.jpg) | ![Set Associative](images/set.jpg) |
-|---|---|
-| Direct Mapped | Set Associative |
+<p align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="images/DM.jpg" alt="Direct Mapped L1" width="400"/>
+        <br/>
+        <b>Direct Mapped</b>
+      </td>
+      <td align="center">
+        <img src="images/Set Associative" alt="Set Associative" width="401" />
+        <br/>
+        <b>Set Associative</b>
+      </td>
+    </tr>
+  </table>
+</p>
  
 ---
 
