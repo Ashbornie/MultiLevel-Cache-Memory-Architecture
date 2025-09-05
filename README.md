@@ -139,6 +139,7 @@ project_root/
     </tr>
   </table>
 </p>
+
 ---
 
 ## 3. Prerequisites
@@ -441,7 +442,9 @@ project_root/
 ---
 
 
+### **License**
 
+[GNU General Public License v3.0](LICENSE)
 
 
 
