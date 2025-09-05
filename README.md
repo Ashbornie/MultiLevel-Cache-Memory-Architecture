@@ -31,233 +31,31 @@ It is designed for easy configuration, reproducibility, and modularity—even fo
 
 
 
-- [1. Prerequisites](#1-prerequisites)
+- [1. Project Directory Structure](#1-project-directory-structure)
 
-- [2. Vivado Installation (Step-by-Step)](#2-vivado-installation-step-by-step)
+- [2. Images](#2-images)
 
-- [3. Python Environment Setup](#3-python-environment-setup)
+- [3. Prerequisites](#3-prerequisites)
 
-- [4. Vivado Project Setup](#4-vivado-project-setup)
+- [4. Vivado Installation (Step-by-Step)](#4-vivado-installation-step-by-step)
 
-- [5. Configuration](#5-configuration)
+- [5. Python Environment Setup](#5-python-environment-setup)
 
-- [6. Project Directory Structure](#6-project-directory-structure)
+- [6. Vivado Project Setup](#6-vivado-project-setup)
 
-- [7. Running the GUI Frontend](#7-running-the-gui-frontend)
+- [7. Configuration](#7-configuration)
 
-- [8. Troubleshooting](#8-troubleshooting)
+- [8. Running the GUI Frontend](#8-running-the-gui-frontend)
 
-- [9. Reference Links](#9-reference-links)
+- [9. Troubleshooting](#9-troubleshooting)
 
-
-
----
-
-
-
-## 1. Prerequisites
-
-
-
-- **Windows PC** with admin rights
-
-- **At least 32 GB free disk space**
-
-- **Python 3.8+** (64-bit recommended)
-
-- **Internet connection** (for Vivado and Python package downloads)
+- [10. Reference Links](#10-reference-links)
 
 
 
 ---
 
-
-
-## 2. Vivado Installation (Step-by-Step)
-
-
-
-### 2.1 Download Vivado
-
-
-
-- Go to the [Xilinx/AMD Vivado Download Page](https://www.xilinx.com/support/download.html).
-
-- Choose the version recommended for this project (e.g., 2018.3 or later).
-
-- Download the **Web Installer** or the **Full Product Installer**.
-
-
-
-### 2.2 Create a Xilinx Account
-
-
-
-- If prompted, create a free Xilinx/AMD account.  
-
- (You will need to provide an email address and set a password.)
-
-
-
-### 2.3 Run the Installer
-
-
-
-- Run the downloaded installer (`.exe` file).
-
-- Grant admin permissions when prompted.
-
-- Follow the on-screen instructions:
-
-   - Choose **Download and Install**.
-
-   - Select **Vivado Design Suite** (not Vitis unless you need it).
-
-   - Choose the **Artix-7** device family (or your board's family) to minimize download size.
-
-   - Accept the license agreements.
-
-   - Choose an installation directory (avoid spaces in the path, e.g., `C:XilinxVivado2018.3`).
-
-   - Wait for the download and installation to complete. This may take 30–60 minutes depending on your connection and system speed.
-
-
-
-### 2.4 Activate Your License
-
-
-
-- After installation, the Vivado License Manager will open.
-
-- Select the free WebPACK license or load a license file if provided.
-
-- Finish setup.
-
-
-
-### 2.5 (Optional) Install Board Support Files
-
-
-
-- If you use Digilent or other boards, you may need to install board files.  
-
- See [Digilent's guide](https://digilent.com/reference/programmable-logic/guides/installing-vivado-and-sdk).
-
-
-
----
-
-
-
-## 3. Python Environment Setup
-
-
-
-1. **Open a terminal** and navigate to the `frontend/` directory.
-
-
-
-2. **Create a virtual environment** (recommended):
-
-
-
-   ```
-
-   python -m venv venv
-
-   venvScriptsactivate      # On Windows
-
-   # source venv/bin/activate # On Linux/Mac
-
-   ```
-
-
-
-3. **Install required Python packages**:
-
-
-
-   ```
-
-   pip install -r PyQt6 qt-material matplotlib numpy
-
-   ```
-
-
-
-   > Required packages include: `PyQt6`, `qt-material`, `matplotlib`, `numpy`
-
-
-
----
-
-
-
-## 4. Vivado Project Setup
-
-
-
-1. **Open Vivado**.
-
-
-
-2. **For each project** (`project_1`, `project_2`, `project_3`, `project_4`):
-
-
-
-   - Create a new Vivado project in the corresponding `backend/project_X/` folder.
-
-   - **Project name** must match the folder (e.g., `project_1` for `backend/project_1/`) and **should not contain spaces**.
-
-   - When creating the project, select **RTL Project** and check "Do not specify sources at this time."
-
-   - After creation, **add HDL source files** from `hdl_src/project_X/`:
-
-       - **If the filename contains `sim` or `tb` (e.g., `cache_tb.v`, `lru_sim.vhd`):**
-
-           - Add as a **simulation source**.
-
-       - **Otherwise:**
-
-           - Add as a **design source**.
-
-   - (Optional) Add any custom TCL scripts as needed.
-
-
-
-3. **Run synthesis and simulation at least once in Vivado** to verify the project is set up correctly.
-
-
-
----
-
-
-
-## 5. Configuration
-
-
-
-1. **Edit `frontend/config.py`** to match your Vivado installation and project paths:
-
-   - Set `VIVADO_SETTINGS_BAT` to your Vivado installation's `settings64.bat` (e.g., `C:/XilinxVivado2018.3/settings64.bat`).
-
-   - Set `VIVADO_BIN` to `vivado` or the full path to the Vivado executable.
-
-   - Set `BACKEND_ROOT` to the absolute path of your `backend` directory.
-
-   - Ensure all paths in the `PROJECTS` dictionary are correct.
-
-
-
-2. **No code changes are needed**—all paths are configurable via `config.py`.
-
-
-
----
-
-
-
-## 6. Project Directory Structure
+## 1. Project Directory Structure
 
 
 
@@ -308,6 +106,236 @@ project_root/
 
 ````
 
+---
+
+## 2. Images
+
+<p align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="images/l1.jpg" alt="Direct Mapped L1" width="400"/>
+        <br/>
+      </td>
+      <td align="center">
+        <img src="images/l2.jpg" alt="Set Associative" width="395" />
+        <br/>
+      </td>
+    </tr>
+  </table>
+</p>
+
+<p align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="images/l3.jpg" alt="Direct Mapped L1" width="400"/>
+        <br/>
+      </td>
+      <td align="center">
+        <img src="images/l4.jpg" alt="Set Associative" width="395" />
+        <br/>
+      </td>
+    </tr>
+  </table>
+</p>
+---
+
+## 3. Prerequisites
+
+
+
+- **Windows PC** with admin rights
+
+- **At least 32 GB free disk space**
+
+- **Python 3.8+** (64-bit recommended)
+
+- **Internet connection** (for Vivado and Python package downloads)
+
+
+
+---
+
+
+
+## 4. Vivado Installation (Step-by-Step)
+
+
+
+### 4.1 Download Vivado
+
+
+
+- Go to the [Xilinx/AMD Vivado Download Page](https://www.xilinx.com/support/download.html).
+
+- Choose the version recommended for this project (e.g., 2018.3 or later).
+
+- Download the **Web Installer** or the **Full Product Installer**.
+
+
+
+### 4.2 Create a Xilinx Account
+
+
+
+- If prompted, create a free Xilinx/AMD account.  
+
+ (You will need to provide an email address and set a password.)
+
+
+
+### 4.3 Run the Installer
+
+
+
+- Run the downloaded installer (`.exe` file).
+
+- Grant admin permissions when prompted.
+
+- Follow the on-screen instructions:
+
+   - Choose **Download and Install**.
+
+   - Select **Vivado Design Suite** (not Vitis unless you need it).
+
+   - Choose the **Artix-7** device family (or your board's family) to minimize download size.
+
+   - Accept the license agreements.
+
+   - Choose an installation directory (avoid spaces in the path, e.g., `C:XilinxVivado2018.3`).
+
+   - Wait for the download and installation to complete. This may take 30–60 minutes depending on your connection and system speed.
+
+
+
+### 4.4 Activate Your License
+
+
+
+- After installation, the Vivado License Manager will open.
+
+- Select the free WebPACK license or load a license file if provided.
+
+- Finish setup.
+
+
+
+### 4.5 (Optional) Install Board Support Files
+
+
+
+- If you use Digilent or other boards, you may need to install board files.  
+
+ See [Digilent's guide](https://digilent.com/reference/programmable-logic/guides/installing-vivado-and-sdk).
+
+
+
+---
+
+
+
+## 5. Python Environment Setup
+
+
+
+1. **Open a terminal** and navigate to the `frontend/` directory.
+
+
+
+2. **Create a virtual environment** (recommended):
+
+
+
+   ```
+
+   python -m venv venv
+
+   venvScriptsactivate      # On Windows
+
+   # source venv/bin/activate # On Linux/Mac
+
+   ```
+
+
+
+3. **Install required Python packages**:
+
+
+
+   ```
+
+   pip install -r PyQt6 qt-material matplotlib numpy
+
+   ```
+
+
+
+   > Required packages include: `PyQt6`, `qt-material`, `matplotlib`, `numpy`
+
+
+
+---
+
+
+
+## 6. Vivado Project Setup
+
+
+
+1. **Open Vivado**.
+
+
+
+2. **For each project** (`project_1`, `project_2`, `project_3`, `project_4`):
+
+
+
+   - Create a new Vivado project in the corresponding `backend/project_X/` folder.
+
+   - **Project name** must match the folder (e.g., `project_1` for `backend/project_1/`) and **should not contain spaces**.
+
+   - When creating the project, select **RTL Project** and check "Do not specify sources at this time."
+
+   - After creation, **add HDL source files** from `hdl_src/project_X/`:
+
+       - **If the filename contains `sim` or `tb` (e.g., `cache_tb.v`, `lru_sim.vhd`):**
+
+           - Add as a **simulation source**.
+
+       - **Otherwise:**
+
+           - Add as a **design source**.
+
+   - (Optional) Add any custom TCL scripts as needed.
+
+
+
+3. **Run synthesis and simulation at least once in Vivado** to verify the project is set up correctly.
+
+
+
+---
+
+
+
+## 7. Configuration
+
+
+
+1. **Edit `frontend/config.py`** to match your Vivado installation and project paths:
+
+   - Set `VIVADO_SETTINGS_BAT` to your Vivado installation's `settings64.bat` (e.g., `C:/XilinxVivado2018.3/settings64.bat`).
+
+   - Set `VIVADO_BIN` to `vivado` or the full path to the Vivado executable.
+
+   - Set `BACKEND_ROOT` to the absolute path of your `backend` directory.
+
+   - Ensure all paths in the `PROJECTS` dictionary are correct.
+
+
+
+2. **No code changes are needed**—all paths are configurable via `config.py`.
 
 
 
@@ -316,7 +344,7 @@ project_root/
 
 
 
-## 7. Running the GUI Frontend
+## 8. Running the GUI Frontend
 
 
 
@@ -360,7 +388,7 @@ project_root/
 
 
 
-## 8. Troubleshooting
+## 9. Troubleshooting
 
 
 
@@ -394,7 +422,7 @@ project_root/
 
 
 
-## 9. Reference Links
+## 10. Reference Links
 
 
 
