@@ -6,8 +6,10 @@ This project provides a **GUI-based frontend** for simulating, analyzing, and vi
 
 It is designed for easy configuration, reproducibility, and modularity—even for users new to Vivado.
 
-
-
+| ![Direct Mapped](images/DM.jpg) | ![Set Associative](images/set.jpg) |
+|---|---|
+| Direct Mapped | Set Associative |
+ 
 ---
 
 
