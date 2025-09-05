@@ -15,7 +15,7 @@ It is designed for easy configuration, reproducibility, and modularity—even fo
         <b>Direct Mapped</b>
       </td>
       <td align="center">
-        <img src="images/set.jpg" alt="Set Associative" width="401" />
+        <img src="images/set.jpg" alt="Set Associative" width="400" />
         <br/>
         <b>Set Associative</b>
       </td>
